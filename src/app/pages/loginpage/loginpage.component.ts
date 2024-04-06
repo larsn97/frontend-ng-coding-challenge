@@ -11,5 +11,4 @@ import {LoginComponent} from "../../components/login/login.component";
   styleUrl: './loginpage.component.scss'
 })
 export class LoginpageComponent {
-
 }

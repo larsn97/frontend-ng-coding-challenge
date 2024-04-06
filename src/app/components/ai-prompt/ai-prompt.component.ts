@@ -7,7 +7,6 @@ import {HttpClientModule} from "@angular/common/http";
 import {Prompt} from "../../shared/interfaces/prompt-interface";
 import {DatePipe} from "@angular/common";
 import {ActivatedRoute, Router} from "@angular/router";
-import {map} from "rxjs";
 import {SessionStorageService} from "../../shared/services/session-storage.service";
 
 @Component({

@@ -5,7 +5,6 @@ import {MatToolbar, MatToolbarRow} from "@angular/material/toolbar";
 import {Router, RouterLink, RouterOutlet} from "@angular/router";
 import {MatIcon} from "@angular/material/icon";
 import {MatButton} from "@angular/material/button";
-import {BehaviorSubject, Observable} from "rxjs";
 import {SessionStorageService} from "./shared/services/session-storage.service";
 
 @Component({
@@ -26,7 +25,7 @@ export class AppComponent implements OnInit{
       this.isAuthenticated = value;
     });
 
-    this.navigateToHomepage()
+    this.navigateToHomepage();
   }
 
   navigateToHomepage() {
