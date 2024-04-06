@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+  @for (prompt of prompts; track prompt.id) {
+    <div class="col-4">
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <div class="col-8">
+              <mat-card-title>{{prompt.user.username}}</mat-card-title>
+            </div>
+            <div class="col-4">
+              <mat-card-subtitle class="">{{prompt.timestamp | date}}</mat-card-subtitle>
+            </div>
+          </mat-card-title-group>
+        </mat-card-header>
+        <div class="col-12">
+          <mat-card-content>
+            {{prompt.description}}
+          </mat-card-content>
+        </div>
+      </mat-card>
+    </div>
+  }
+  </div>
+</div>
+
+
+

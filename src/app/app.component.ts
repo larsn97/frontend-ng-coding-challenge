@@ -1,13 +1,53 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component, inject, OnInit} from '@angular/core';
+import {MatMenu} from "@angular/material/menu";
+import {MatButtonToggle} from "@angular/material/button-toggle";
+import {MatToolbar, MatToolbarRow} from "@angular/material/toolbar";
+import {Router, RouterLink, RouterOutlet} from "@angular/router";
+import {MatIcon} from "@angular/material/icon";
+import {MatButton} from "@angular/material/button";
+import {BehaviorSubject, Observable} from "rxjs";
+import {SessionStorageService} from "./shared/services/session-storage.service";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MatMenu, MatButtonToggle, MatToolbar, MatIcon, MatToolbarRow, RouterLink, MatButton],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'frontend-ng-coding-challenge';
+export class AppComponent implements OnInit{
+  private router = inject(Router);
+  private storageService = inject(SessionStorageService);
+
+  public isAuthenticated: boolean | null = false;
+
+  ngOnInit() {
+    this.storageService.getAuthenticatedItem().subscribe((value) => {
+      this.isAuthenticated = value;
+    });
+
+    this.navigateToHomepage()
+  }
+
+  navigateToHomepage() {
+    this.router.navigate(['', 'homepage'])
+  }
+
+  navigateToSignUp() {
+    this.router.navigate(['', 'signup'])
+  }
+
+  navigateToMyAiPrompts() {
+    this.router.navigate(['', 'myprompts'])
+  }
+
+  navigateToLoginPage() {
+    this.router.navigate(['', 'login'])
+  }
+
+  logout() {
+    this.storageService.removeAuthenticatedItem();
+    this.storageService.removeUserIdItem();
+    sessionStorage.clear();
+  }
 }
