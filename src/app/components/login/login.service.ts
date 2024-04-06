@@ -8,7 +8,7 @@ import {User, UserLogin} from "../../shared/interfaces/user-interface";
   providedIn: 'root'
 })
 export class LoginService {
-  private  http = inject(HttpClient);
+  private http = inject(HttpClient);
 
   public login(username: string, password: string): Observable<UserLogin> {
     return this.http.get<UserLogin>(`api/login?username=${username}&password=${password}`).pipe(

@@ -48,7 +48,6 @@ export class LoginComponent {
   public onSubmit() {
     this.service.login(this.form.controls.username.value, this.form.controls.password.value).subscribe({
       next: (value) => {
-
         this.storageService.setAuthenticatedItem(value.isAuthenticated);
         this.storageService.setUserIdItem(value.userId);
         this.router.navigate(['', 'homepage']);

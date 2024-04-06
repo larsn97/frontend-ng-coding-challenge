@@ -12,7 +12,9 @@
     @if(isAuthenticated) {
       <button mat-flat-button class="button-spacing" (click)="logout()">Logout</button>
     }
-    <button mat-flat-button (click)="navigateToSignUp()">Register</button>
+    @if(!isAuthenticated) {
+      <button mat-flat-button (click)="navigateToSignUp()">Sign Up</button>
+    }
   </mat-toolbar-row>
 </mat-toolbar>
 
