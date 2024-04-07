@@ -4,6 +4,7 @@ export interface User {
   password: string;
 }
 
+
 export interface UserLogin {
   isAuthenticated: boolean;
   userId: number;

@@ -16,7 +16,7 @@
               <mat-label>Username</mat-label>
               <input matInput type="text" [formControl]="form.controls.username" [errorStateMatcher]="matcher">
               @if (form.controls.username.invalid) {
-                <mat-error>Dies ist ein Pflichtfeld</mat-error>
+                <mat-error>Nicht valide</mat-error>
               }
             </mat-form-field>
           </div>
@@ -28,17 +28,17 @@
                 <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
               @if (form.controls.password.invalid) {
-                <mat-error>Dies ist ein Pflichtfeld</mat-error>
+                <mat-error>Nicht valide</mat-error>
               }
             </mat-form-field>
             <mat-form-field>
               <mat-label>Password</mat-label>
-              <input matInput [type]="hideRepeatPassword ? 'password' : 'text'" [formControl]="form.controls.password" [errorStateMatcher]="matcher">
+              <input matInput [type]="hideRepeatPassword ? 'password' : 'text'" [formControl]="form.controls.repeatPassword" [errorStateMatcher]="matcher">
               <button mat-icon-button matSuffix type="button" (click)="hideRepeatPassword = !hideRepeatPassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideRepeatPassword">
                 <mat-icon>{{hideRepeatPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
               @if (form.controls.password.invalid) {
-                <mat-error>Dies ist ein Pflichtfeld</mat-error>
+                <mat-error>Nicht valide</mat-error>
               }
             </mat-form-field>
           </div>
@@ -46,6 +46,7 @@
             <button mat-flat-button color="primary" type="submit" [disabled]="!form.valid">Registrieren</button>
           </div>
         </form>
+        <div class="col-12 register-hint">{{registerHint}}</div>
       </mat-card-content>
     </div>
   </mat-card>

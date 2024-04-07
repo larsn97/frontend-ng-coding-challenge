@@ -31,8 +31,11 @@ export class AiPromptComponent implements OnInit {
             this.aiService.getAllPrompts().subscribe(prompt => {this.prompts = prompt;}) :
               this.aiService.getMyPrompts(sessionStorage.getItem('userId')).subscribe(prompt => {
               this.prompts = prompt;
-          })
-        })
+          });
+        });
     });
   }
+
+  //filter einbauen
+
 }

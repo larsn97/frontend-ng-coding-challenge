@@ -27,12 +27,13 @@ export class SignupcComponent {
 
   public matcher = new MyErrorStateMatcher()
   public form = this.fb.group({
-    'username': ['', Validators.required],
-    'password': ['', Validators.required],
-    'repeatPassword': ['', Validators.required],
+    'username': ['', [Validators.required, Validators.maxLength(16), Validators.minLength(3)]],
+    'password': ['', [Validators.required, Validators.maxLength(20), Validators.minLength(6)]],
+    'repeatPassword': ['', [Validators.required, Validators.maxLength(20), Validators.minLength(6)]],
   });
   public hidePassword = true;
   public hideRepeatPassword = true;
+  public registerHint: string = '';
 
   onSubmit() {
     if(this.form.controls.password.value === this.form.controls.repeatPassword.value) {
@@ -47,7 +48,7 @@ export class SignupcComponent {
         }
       });
     } else {
-
+      this.registerHint = 'Passwörter stimmen nicht überein';
     }
   }
 }

@@ -44,6 +44,10 @@ export class AppComponent implements OnInit{
     this.router.navigate(['', 'login'])
   }
 
+  navigateTocreatePrompt() {
+    this.router.navigate(['', 'createPrompt'])
+  }
+
   logout() {
     this.storageService.removeAuthenticatedItem();
     this.storageService.removeUserIdItem();

@@ -5,12 +5,15 @@
     @if(isAuthenticated) {
       <mat-icon aria-hidden="false" fontIcon="person" class="nav-icon" (click)="navigateToMyAiPrompts()"></mat-icon>
     }
+    @if (isAuthenticated) {
+      <button mat-flat-button class="button-spacing-left" (click)="navigateTocreatePrompt()">Prompt erstellen</button>
+    }
     <span class="spacer"></span>
     @if (!isAuthenticated) {
-      <button mat-flat-button class="button-spacing" (click)="navigateToLoginPage()">Login</button>
+      <button mat-flat-button class="button-spacing-right" (click)="navigateToLoginPage()">Login</button>
     }
     @if(isAuthenticated) {
-      <button mat-flat-button class="button-spacing" (click)="logout()">Logout</button>
+      <button mat-flat-button class="button-spacing-right" (click)="logout()">Logout</button>
     }
     @if(!isAuthenticated) {
       <button mat-flat-button (click)="navigateToSignUp()">Sign Up</button>
