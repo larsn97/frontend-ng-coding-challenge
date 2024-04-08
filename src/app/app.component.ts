@@ -1,4 +1,4 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, inject, OnInit, ViewChild} from '@angular/core';
 import {MatMenu} from "@angular/material/menu";
 import {MatButtonToggle} from "@angular/material/button-toggle";
 import {MatToolbar, MatToolbarRow} from "@angular/material/toolbar";
@@ -6,6 +6,7 @@ import {Router, RouterLink, RouterOutlet} from "@angular/router";
 import {MatIcon} from "@angular/material/icon";
 import {MatButton} from "@angular/material/button";
 import {SessionStorageService} from "./shared/services/session-storage.service";
+import {HinweisComponent} from "./shared/libs/hinweis/hinweis.component";
 
 @Component({
   selector: 'app-root',
@@ -27,6 +28,8 @@ export class AppComponent implements OnInit{
 
     this.navigateToHomepage();
   }
+
+  @ViewChild(HinweisComponent) hinweisComponent!: HinweisComponent
 
   navigateToHomepage() {
     this.router.navigate(['', 'homepage'])
@@ -52,5 +55,6 @@ export class AppComponent implements OnInit{
     this.storageService.removeAuthenticatedItem();
     this.storageService.removeUserIdItem();
     sessionStorage.clear();
+    this.router.navigate(['', 'homepage']);
   }
 }

@@ -6,3 +6,36 @@
   max-width: 400px;
   margin-bottom: 15px;
 }
+
+.nav-icon {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.nav-icon:hover {
+  color: #f59d9d;
+}
+
+.margin-like-anzahl {
+  margin-bottom: 4px;
+}
+
+.reduce-padding {
+  padding-top: 0 !important;
+}
+
+.increase-margin {
+  margin-top: 5px !important;
+}
+
+:host .mat-mdc-card-content {
+  display: flex;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.bigger-width {
+  width: 40% !important;
+}
