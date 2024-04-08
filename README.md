@@ -34,8 +34,8 @@ Wertänderungen mitbekommen werden, z.B. wenn sich ein User ausloggt.
 
 ### Create Prompt
 
-Beim create Prompt wird die User 
-
+Beim create Prompt wird die UserId genutzt um den User aus dem Backend zu laden. Der Username wird nun beim Erstellen des Prompts vorbelegt.
+Die Description kann in einem Formfield eingegeben werden und wird zusammen mit der UserId, sofern alle Validierungen erfüllt sind, mit der userId zusammen an das Backend geschickt. 
 ### Ai-Prompt
 
 Diese Komponente dient zur Anzeige der Prompts auf den Pages /homepage und /myprompts.
