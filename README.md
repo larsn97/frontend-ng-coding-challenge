@@ -1,27 +1,43 @@
-# FrontendNgCodingChallenge
+## frontend-ng-coding-challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
+Frontend zur Anzeige von AI Prompts
 
-## Development server
+## Voraussetzungen
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Bevor Sie beginnen, stellen Sie sicher, dass Sie folgende Software installiert haben:
+- Node v20.12.1
+- npm v10.5.1
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
+### Die folgenden Commands können alle in der Bash ausgeführt werden.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Klonen Sie das Repository:
+```bash
+git clone git@github.com:larsn97/frontend-ng-coding-challenge.git
+```
+2. Checke die branches
+```bash
+git branch -a
+```
+3. Falls nicht von alleine passiert
+```bash
+git checkout main
+```
+4. Stelle sicher, dass du auf dem main arbeitest
+```bash
+git branch
+```
+```
+##Output##
+$ git branch
+* main
+```
+5. Installieren aller dependencies aus der package.json
+```bash
+npm i
+```
+6. Starten des Projekts
+```bash
+ng serve --open
+```
