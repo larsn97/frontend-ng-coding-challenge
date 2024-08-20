@@ -1,5 +1,5 @@
 import {inject, Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import {catchError, Observable, throwError} from "rxjs";
 import {UserLogin} from "../../shared/interfaces/user-interface";
 import {Prompt} from "../../shared/interfaces/prompt-interface";

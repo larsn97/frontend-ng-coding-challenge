@@ -3,7 +3,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {MatDividerModule} from "@angular/material/divider";
 import {AiPromptService} from "./ai-prompt.service";
-import {HttpClientModule} from "@angular/common/http";
+import {} from "@angular/common/http";
 import {Prompt} from "../../shared/interfaces/prompt-interface";
 import {AsyncPipe, DatePipe, NgForOf, NgIf} from "@angular/common";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -22,7 +22,11 @@ interface PromptSearch {
 @Component({
   selector: 'app-ai-prompt',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatDividerModule, HttpClientModule, DatePipe, MatSelectModule, ReactiveFormsModule, FormsModule, MatInputModule, NgForOf, MatIconModule, HinweisComponent, AsyncPipe, NgIf],
+  imports: [MatCardModule, MatButtonModule, MatDividerModule, 
+// TODO: `HttpClientModule` should not be imported into a component directly.
+// Please refactor the code to add `provideHttpClient()` call to the provider list in the
+// application bootstrap logic and remove the `HttpClientModule` import from this component.
+HttpClientModule, DatePipe, MatSelectModule, ReactiveFormsModule, FormsModule, MatInputModule, NgForOf, MatIconModule, HinweisComponent, AsyncPipe, NgIf],
   templateUrl: './ai-prompt.component.html',
   styleUrls: ['./ai-prompt.component.scss']
 })
