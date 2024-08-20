@@ -1,16 +1,15 @@
-import {Component, inject, OnDestroy, OnInit,} from '@angular/core';
+import {Component, inject, OnInit,} from '@angular/core';
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {MatDividerModule} from "@angular/material/divider";
 import {AiPromptService} from "./ai-prompt.service";
-import {} from "@angular/common/http";
 import {Prompt} from "../../shared/interfaces/prompt-interface";
 import {AsyncPipe, DatePipe, NgForOf, NgIf} from "@angular/common";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {SessionStorageService} from "../../shared/services/session-storage.service";
-import {MatSelect, MatSelectModule} from "@angular/material/select";
+import { MatSelectModule} from "@angular/material/select";
 import {FormBuilder, FormsModule, NonNullableFormBuilder, ReactiveFormsModule} from "@angular/forms";
-import {MatInput, MatInputModule} from "@angular/material/input";
+import { MatInputModule} from "@angular/material/input";
 import {BehaviorSubject, find, Observable, Subscription, take} from "rxjs";
 import {MatIconModule} from "@angular/material/icon";
 import {HinweisComponent} from "../../shared/libs/hinweis/hinweis.component";
@@ -22,11 +21,7 @@ interface PromptSearch {
 @Component({
   selector: 'app-ai-prompt',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatDividerModule, 
-// TODO: `HttpClientModule` should not be imported into a component directly.
-// Please refactor the code to add `provideHttpClient()` call to the provider list in the
-// application bootstrap logic and remove the `HttpClientModule` import from this component.
-HttpClientModule, DatePipe, MatSelectModule, ReactiveFormsModule, FormsModule, MatInputModule, NgForOf, MatIconModule, HinweisComponent, AsyncPipe, NgIf],
+  imports: [MatCardModule, MatButtonModule, MatDividerModule, DatePipe, MatSelectModule, ReactiveFormsModule, FormsModule, MatInputModule, NgForOf, MatIconModule, HinweisComponent, AsyncPipe, NgIf],
   templateUrl: './ai-prompt.component.html',
   styleUrls: ['./ai-prompt.component.scss']
 })

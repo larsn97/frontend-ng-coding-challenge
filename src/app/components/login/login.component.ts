@@ -1,4 +1,4 @@
-import {Component, EventEmitter, inject, OnDestroy, Output} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {
   FormControl,
   FormGroupDirective,
@@ -14,7 +14,6 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {ErrorStateMatcher} from "@angular/material/core";
 import {MatIconModule} from "@angular/material/icon";
-import {Observable} from "rxjs";
 import {LoginService} from "./login.service";
 import {Router} from "@angular/router";
 import {SessionStorageService} from "../../shared/services/session-storage.service";
