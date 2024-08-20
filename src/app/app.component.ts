@@ -1,4 +1,4 @@
-import {Component, inject, OnInit, ViewChild} from '@angular/core';
+import {Component, DestroyRef, inject, OnInit, ViewChild} from '@angular/core';
 import {MatMenu} from "@angular/material/menu";
 import {MatButtonToggle} from "@angular/material/button-toggle";
 import {MatToolbar, MatToolbarRow} from "@angular/material/toolbar";
@@ -7,6 +7,7 @@ import {MatIcon} from "@angular/material/icon";
 import {MatButton} from "@angular/material/button";
 import {SessionStorageService} from "./shared/services/session-storage.service";
 import {HinweisComponent} from "./shared/libs/hinweis/hinweis.component";
+import {takeUntilDestroyed} from "@angular/core/rxjs-interop"
 
 @Component({
   selector: 'app-root',
@@ -18,11 +19,12 @@ import {HinweisComponent} from "./shared/libs/hinweis/hinweis.component";
 export class AppComponent implements OnInit{
   private router = inject(Router);
   private storageService = inject(SessionStorageService);
+  private destroyRef = inject(DestroyRef);
 
   public isAuthenticated: boolean | null = false;
 
   ngOnInit() {
-    this.storageService.getAuthenticatedItem().subscribe((value) => {
+    this.storageService.getAuthenticatedItem().pipe(takeUntilDestroyed(this.destroyRef)).subscribe((value) => {
       this.isAuthenticated = value;
     });
 
